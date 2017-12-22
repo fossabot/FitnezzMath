@@ -31,7 +31,7 @@ public class PollockThree {
      * @param isMale - true for Male and false for Female
      * @return Fat Percentage
      */
-    public static Double fatPercentage(Integer age, double sum, boolean isMale) {
+    public static Double fatPercentage(int age, double sum, boolean isMale) {
         if (age > 0 && sum > 0) {
             double bodyDensity = isMale ?
                     calculateFatPercentageForMale(age, sum) :

@@ -36,7 +36,6 @@ public class PollockSeven {
      * @return Fat Percentage
      */
     public static Double fatPercentage(int age, double sum, boolean isMale) {
-
         if (age > 0 && sum > 0) {
             double bodyDensity = isMale ?
                     calculateFatPercentageForMale(age, sum) :

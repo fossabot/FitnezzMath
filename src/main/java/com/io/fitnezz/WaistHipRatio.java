@@ -12,7 +12,7 @@ public class WaistHipRatio {
      * @param hip   - Hip circumference
      * @return Waist to Hip Ratio
      */
-    public static Double calculate(Double waist, Double hip) {
+    public static Double calculate(double waist, double hip) {
         if (waist > 0 && hip > 0) {
             return waist / hip;
         }
