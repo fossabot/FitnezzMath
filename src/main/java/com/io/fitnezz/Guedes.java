@@ -2,24 +2,37 @@ package com.io.fitnezz;
 
 import com.io.fitnezz.util.Utils;
 
-public class Faulkner {
+public class Guedes {
 
-    private Faulkner(){
+    private Guedes() {
     }
 
+    /**
+     * Method to calculate sum of Guedes Three Skin Folds
+     *
+     * @param triceps    - Triceps
+     * @param suprailiac - Suprailiac
+     * @param abdominal  - Abdominal
+     * @return Sum of Guedes Three Skin Folds
+     */
+    public static Double sum(double triceps, double suprailiac, double abdominal) {
+        if (triceps > 0 && suprailiac > 0 && abdominal > 0) {
+            return triceps + suprailiac + abdominal;
+        }
+
+        return null;
+    }
 
     /**
      * Method to calculate Fat Percentage
      *
-     * @param triceps     - Triceps
-     * @param subscapular - Subscapular
-     * @param suprailiac  - Suprailiac
-     * @param abdominal   - Abdominal
+     * @param sum - Sum of Guedes Three Skin Folds
      * @return Fat Percentage
      */
-    public static Double fatPercentage(double triceps, double subscapular, double suprailiac, double abdominal) {
-        if (triceps > 0 && subscapular > 0 && suprailiac > 0 && abdominal > 0) {
-            return (triceps + subscapular + suprailiac + abdominal) * 0.153 + 5.783;
+    public static Double fatPercentage(double sum) {
+        if (sum > 0) {
+            double fatPercentagePartOne = 1.17136 - (Math.log10(sum) * 0.06706);
+            return ((4.95 / fatPercentagePartOne) - 4.5) * 100;
         }
 
         return null;
@@ -33,7 +46,7 @@ public class Faulkner {
      * @return Fat Weight
      */
     public static Double fatWeight(double bodyWeight, double fatPercentage) {
-        if (bodyWeight > 0 && fatPercentage > 0) {
+        if (fatPercentage > 0 && bodyWeight > 0) {
             return Utils.calculateFatWeight(bodyWeight, fatPercentage);
         }
 
