@@ -1,4 +1,4 @@
-package com.io.fitnezz;
+package com.io.fitnezz.index;
 
 public class PonderalIndex {
 
