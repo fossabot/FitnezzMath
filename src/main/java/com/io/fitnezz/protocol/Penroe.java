@@ -16,8 +16,8 @@ public class Penroe {
      * @param isMaleSex    - true for Male and false for Female
      * @return Fat Percentage
      */
-    public Double fatPercentage(double bodyWeight, double height, double leanBodyMass,
-                                double hip, double abdomen, boolean isMaleSex) {
+    public static Double fatPercentage(double bodyWeight, double height, double leanBodyMass,
+                                       double hip, double abdomen, boolean isMaleSex) {
 
         if (!isMaleSex && hip > 0 && height > 0 && abdomen > 0) {
             return (0.55 * hip) - (0.24 * height) + (0.28 * abdomen) - 8.43;
@@ -34,7 +34,7 @@ public class Penroe {
      * @param fatPercentage - Fat Percentage
      * @return Fat Weight
      */
-    public Double fatWeight(double bodyWeight, double fatPercentage) {
+    public static Double fatWeight(double bodyWeight, double fatPercentage) {
         return BaseProtocol.fatWeight(bodyWeight, fatPercentage);
     }
 
@@ -48,7 +48,7 @@ public class Penroe {
      * @param isMaleSex  - true for Male and false for Female
      * @return Lean Body Mass
      */
-    public Double leanBodyMass(double bodyWeight, double abdomen, double fist, double fatWeight, boolean isMaleSex) {
+    public static Double leanBodyMass(double bodyWeight, double abdomen, double fist, double fatWeight, boolean isMaleSex) {
         if (!isMaleSex && bodyWeight > 0 && fatWeight > 0) {
             return BaseProtocol.leanBodyMass(bodyWeight, fatWeight);
         } else if (isMaleSex && abdomen > 0 && fist > 0 && bodyWeight > 0) {
