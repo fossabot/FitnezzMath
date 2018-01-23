@@ -25,7 +25,7 @@ public class ClassifyFatPercentage extends Classify {
         return percentageLevels;
     }
 
-    public void classifyFemale(double fatPercentage, int age) {
+    public void female(double fatPercentage, int age) {
         if (age >= 1 && age <= 25)
             fatPercentageForFemaleUntilTwentyFiveYO(fatPercentage);
         else if (age >= 26 && age <= 35)
@@ -41,7 +41,7 @@ public class ClassifyFatPercentage extends Classify {
 
     }
 
-    public void classifyMale(double fatPercentage, int age) {
+    public void male(double fatPercentage, int age) {
         if (age >= 1 && age <= 25)
             fatPercentageForMaleUntilTwentyFiveYO(fatPercentage);
         else if (age >= 26 && age <= 35)
