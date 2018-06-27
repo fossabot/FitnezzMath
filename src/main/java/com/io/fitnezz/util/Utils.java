@@ -39,7 +39,7 @@ public class Utils {
      * @return Muscle Weight
      */
     public static double calculateMuscleWeight(double bodyWeight, double fatWeight, double boneWeight, double residualWeight) {
-        return bodyWeight - (residualWeight - boneWeight - fatWeight);
+        return bodyWeight - residualWeight - boneWeight - fatWeight;
     }
 
 }

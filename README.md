@@ -1,6 +1,6 @@
-# FitnezzMath
+# FitnezzMath [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-FitnezzMath is a repository of Fitnezz.io calculusand classifications.
+FitnezzMath is a repository of Fitnezz.io calculus and classifications.
 
 
 Calculus: 
