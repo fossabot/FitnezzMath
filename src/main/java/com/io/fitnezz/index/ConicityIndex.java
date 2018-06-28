@@ -16,7 +16,7 @@ public class ConicityIndex {
     public static Double calculate(double bodyWeight, double height, double waist) {
         if (bodyWeight > 0 && height > 0 && waist > 0) {
             double sqrt = Math.sqrt(bodyWeight / height);
-            double base = 0.109 * sqrt;
+            double base = Math.pow(sqrt, 0.109);
             return (waist / 100) / base;
         }
 
