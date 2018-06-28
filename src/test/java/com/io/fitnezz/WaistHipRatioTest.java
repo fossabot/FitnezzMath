@@ -3,6 +3,9 @@ package com.io.fitnezz;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
+
 public class WaistHipRatioTest {
 
     @Test
@@ -39,6 +42,14 @@ public class WaistHipRatioTest {
 
         Double waistHipRatio = WaistHipRatio.calculate(waist, hip);
         Assert.assertNull(waistHipRatio);
+    }
+
+    @Test
+    public void testConstructorIsPrivate() throws Exception {
+        Constructor<WaistHipRatio> constructor = WaistHipRatio.class.getDeclaredConstructor();
+        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
+        constructor.setAccessible(true);
+        constructor.newInstance();
     }
 
 }

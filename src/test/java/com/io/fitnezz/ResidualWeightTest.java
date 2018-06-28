@@ -3,6 +3,9 @@ package com.io.fitnezz;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
+
 public class ResidualWeightTest {
 
     @Test
@@ -24,6 +27,14 @@ public class ResidualWeightTest {
         double bodyWeight = 0D;
         Double residualWeight = ResidualWeight.calculate(bodyWeight, false);
         Assert.assertNull(residualWeight);
+    }
+
+    @Test
+    public void testConstructorIsPrivate() throws Exception {
+        Constructor<ResidualWeight> constructor = ResidualWeight.class.getDeclaredConstructor();
+        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
+        constructor.setAccessible(true);
+        constructor.newInstance();
     }
 
 }

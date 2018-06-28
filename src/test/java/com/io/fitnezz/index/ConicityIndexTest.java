@@ -3,10 +3,13 @@ package com.io.fitnezz.index;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
+
 public class ConicityIndexTest {
 
     @Test
-    public void calculateCI(){
+    public void calculateCI() {
         double bodyWeight = 75D;
         double height = 1.69D;
         double waist = 81.9D;
@@ -16,7 +19,7 @@ public class ConicityIndexTest {
     }
 
     @Test
-    public void calculateCIZeroWeight(){
+    public void calculateCIZeroWeight() {
         double bodyWeight = 0D;
         double height = 1.69D;
         double waist = 81.9D;
@@ -26,7 +29,7 @@ public class ConicityIndexTest {
     }
 
     @Test
-    public void calculateCIZeroHeight(){
+    public void calculateCIZeroHeight() {
         double bodyWeight = 75D;
         double height = 0D;
         double waist = 81.9D;
@@ -36,7 +39,7 @@ public class ConicityIndexTest {
     }
 
     @Test
-    public void calculateCIZeroWaist(){
+    public void calculateCIZeroWaist() {
         double bodyWeight = 75D;
         double height = 1.69D;
         double waist = 0D;
@@ -46,13 +49,21 @@ public class ConicityIndexTest {
     }
 
     @Test
-    public void calculateCIZeroBoth(){
+    public void calculateCIZeroBoth() {
         double bodyWeight = 0D;
         double height = 0D;
         double waist = 0D;
 
         Double ci = ConicityIndex.calculate(bodyWeight, height, waist);
         Assert.assertNull(ci);
+    }
+
+    @Test
+    public void testConstructorIsPrivate() throws Exception {
+        Constructor<ConicityIndex> constructor = ConicityIndex.class.getDeclaredConstructor();
+        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
+        constructor.setAccessible(true);
+        constructor.newInstance();
     }
 
 }

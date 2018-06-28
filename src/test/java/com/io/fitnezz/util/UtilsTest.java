@@ -3,10 +3,13 @@ package com.io.fitnezz.util;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Modifier;
+
 public class UtilsTest {
 
     @Test
-    public void calculateFatWeight(){
+    public void calculateFatWeight() {
         double bodyWeight = 75D;
         double fatPercentage = 15D;
 
@@ -15,7 +18,7 @@ public class UtilsTest {
     }
 
     @Test
-    public void calculateLeanBodyMass(){
+    public void calculateLeanBodyMass() {
         double bodyWeight = 75D;
         double fatWeight = 11.25D;
 
@@ -24,7 +27,7 @@ public class UtilsTest {
     }
 
     @Test
-    public void calculateMuscleWeight(){
+    public void calculateMuscleWeight() {
         double bodyWeight = 75D;
         double fatWeight = 11.25D;
         double boneWeight = 10.12D;
@@ -32,6 +35,14 @@ public class UtilsTest {
 
         double leanBodyMass = Utils.calculateMuscleWeight(bodyWeight, fatWeight, boneWeight, residualWeight);
         Assert.assertEquals(35.55D, leanBodyMass, 0.01);
+    }
+
+    @Test
+    public void testConstructorIsPrivate() throws Exception {
+        Constructor<Utils> constructor = Utils.class.getDeclaredConstructor();
+        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
+        constructor.setAccessible(true);
+        constructor.newInstance();
     }
 
 }
