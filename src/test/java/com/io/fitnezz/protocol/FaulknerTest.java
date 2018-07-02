@@ -22,6 +22,35 @@ public class FaulknerTest extends BaseTest<Faulkner> {
     }
 
     @Test
+    public void fatWeight() {
+        double bodyWeight = 75D;
+        double fatPercentage = 21.083D;
+
+        Double fatWeight = Faulkner.fatWeight(bodyWeight, fatPercentage);
+        Assert.assertEquals(15.812D, fatWeight, DELTA);
+    }
+
+    @Test
+    public void leanBodyMass() {
+        double bodyWeight = 75D;
+        double fatWeight = 15.812D;
+
+        Double leanBodyMass = Faulkner.leanBodyMass(bodyWeight, fatWeight);
+        Assert.assertEquals(59.188D, leanBodyMass, DELTA);
+    }
+
+    @Test
+    public void muscleWeight() {
+        double bodyWeight = 75D;
+        double residualWeight = 15.675D;
+        double boneWeight = 10.120D;
+        double fatWeight = 15.812D;
+
+        Double muscleWeight = Faulkner.muscleWeight(bodyWeight, residualWeight, boneWeight, fatWeight);
+        Assert.assertEquals(33.393D, muscleWeight, DELTA);
+    }
+
+    @Test
     public void fatPercentageZeroTriceps() {
         double triceps = 0D;
         double subscapular = 30D;
