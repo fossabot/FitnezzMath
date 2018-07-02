@@ -1,12 +1,14 @@
 package com.io.fitnezz.index;
 
+import com.io.fitnezz.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
+public class ConicityIndexTest extends BaseTest<ConicityIndex> {
 
-public class ConicityIndexTest {
+    public ConicityIndexTest() {
+        this.clazz = ConicityIndex.class;
+    }
 
     @Test
     public void calculateCI() {
@@ -56,14 +58,6 @@ public class ConicityIndexTest {
 
         Double ci = ConicityIndex.calculate(bodyWeight, height, waist);
         Assert.assertNull(ci);
-    }
-
-    @Test
-    public void testConstructorIsPrivate() throws Exception {
-        Constructor<ConicityIndex> constructor = ConicityIndex.class.getDeclaredConstructor();
-        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
-        constructor.setAccessible(true);
-        constructor.newInstance();
     }
 
 }

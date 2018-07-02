@@ -1,12 +1,14 @@
 package com.io.fitnezz.util;
 
+import com.io.fitnezz.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
+public class UtilsTest extends BaseTest<Utils> {
 
-public class UtilsTest {
+    public UtilsTest() {
+        this.clazz = Utils.class;
+    }
 
     @Test
     public void calculateFatWeight() {
@@ -35,14 +37,6 @@ public class UtilsTest {
 
         double leanBodyMass = Utils.calculateMuscleWeight(bodyWeight, fatWeight, boneWeight, residualWeight);
         Assert.assertEquals(35.55D, leanBodyMass, 0.01);
-    }
-
-    @Test
-    public void testConstructorIsPrivate() throws Exception {
-        Constructor<Utils> constructor = Utils.class.getDeclaredConstructor();
-        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
-        constructor.setAccessible(true);
-        constructor.newInstance();
     }
 
 }

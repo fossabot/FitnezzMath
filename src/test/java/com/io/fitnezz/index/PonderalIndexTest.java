@@ -1,12 +1,14 @@
 package com.io.fitnezz.index;
 
+import com.io.fitnezz.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
+public class PonderalIndexTest extends BaseTest<PonderalIndex> {
 
-public class PonderalIndexTest {
+    public PonderalIndexTest() {
+        this.clazz = PonderalIndex.class;
+    }
 
     @Test
     public void calculatePI() {
@@ -42,14 +44,6 @@ public class PonderalIndexTest {
 
         Double pi = PonderalIndex.calculate(bodyWeight, height);
         Assert.assertNull(pi);
-    }
-
-    @Test
-    public void testConstructorIsPrivate() throws Exception {
-        Constructor<PonderalIndex> constructor = PonderalIndex.class.getDeclaredConstructor();
-        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
-        constructor.setAccessible(true);
-        constructor.newInstance();
     }
 
 }

@@ -3,10 +3,11 @@ package com.io.fitnezz;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.Modifier;
+public class WaistHipRatioTest extends BaseTest<WaistHipRatio> {
 
-public class WaistHipRatioTest {
+    public WaistHipRatioTest() {
+        this.clazz = WaistHipRatio.class;
+    }
 
     @Test
     public void calculateWHR() {
@@ -42,14 +43,6 @@ public class WaistHipRatioTest {
 
         Double waistHipRatio = WaistHipRatio.calculate(waist, hip);
         Assert.assertNull(waistHipRatio);
-    }
-
-    @Test
-    public void testConstructorIsPrivate() throws Exception {
-        Constructor<WaistHipRatio> constructor = WaistHipRatio.class.getDeclaredConstructor();
-        Assert.assertTrue(Modifier.isPrivate(constructor.getModifiers()));
-        constructor.setAccessible(true);
-        constructor.newInstance();
     }
 
 }
