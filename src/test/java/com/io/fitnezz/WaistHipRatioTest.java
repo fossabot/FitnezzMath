@@ -15,7 +15,7 @@ public class WaistHipRatioTest extends BaseTest<WaistHipRatio> {
         double hip = 99;
 
         Double waistHipRatio = WaistHipRatio.calculate(waist, hip);
-        Assert.assertEquals(0.8272727272727274D, waistHipRatio, 0.01);
+        Assert.assertEquals(0.8272727272727274D, waistHipRatio, DELTA);
     }
 
     @Test

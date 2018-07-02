@@ -16,7 +16,7 @@ public class PonderalIndexTest extends BaseTest<PonderalIndex> {
         double height = 1.69D;
 
         Double pi = PonderalIndex.calculate(bodyWeight, height);
-        Assert.assertEquals(40.07433699793675D, pi, 0.01);
+        Assert.assertEquals(40.07433699793675D, pi, DELTA);
     }
 
     @Test

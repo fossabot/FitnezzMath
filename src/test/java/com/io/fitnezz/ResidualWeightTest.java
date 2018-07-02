@@ -13,14 +13,14 @@ public class ResidualWeightTest extends BaseTest<ResidualWeight> {
     public void calculateResidualWeightMale() {
         double bodyWeight = 75D;
         Double residualWeight = ResidualWeight.calculate(bodyWeight, true);
-        Assert.assertEquals(15.675D, residualWeight, 0.01);
+        Assert.assertEquals(15.675D, residualWeight, DELTA);
     }
 
     @Test
     public void calculateResidualWeightFemale() {
         double bodyWeight = 75D;
         Double residualWeight = ResidualWeight.calculate(bodyWeight, false);
-        Assert.assertEquals(18.075D, residualWeight, 0.01);
+        Assert.assertEquals(18.075D, residualWeight, DELTA);
     }
 
     @Test

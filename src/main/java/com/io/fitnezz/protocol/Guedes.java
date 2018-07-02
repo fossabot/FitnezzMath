@@ -36,6 +36,4 @@ public class Guedes extends BaseProtocol {
         return null;
     }
 
-
-
 }

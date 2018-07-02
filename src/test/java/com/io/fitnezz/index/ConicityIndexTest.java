@@ -17,7 +17,7 @@ public class ConicityIndexTest extends BaseTest<ConicityIndex> {
         double waist = 81.9D;
 
         Double ci = ConicityIndex.calculate(bodyWeight, height, waist);
-        Assert.assertEquals(0.6660592872626876D, ci, 0.01);
+        Assert.assertEquals(0.6660592872626876D, ci, DELTA);
     }
 
     @Test

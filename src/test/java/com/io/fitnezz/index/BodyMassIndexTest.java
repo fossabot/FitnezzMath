@@ -16,7 +16,7 @@ public class BodyMassIndexTest extends BaseTest<BodyMassIndex> {
         double height = 1.69D;
 
         Double bmi = BodyMassIndex.calculate(bodyWeight, height);
-        Assert.assertEquals(26.25958474843318D, bmi, 0.01);
+        Assert.assertEquals(26.25958474843318D, bmi, DELTA);
     }
 
     @Test

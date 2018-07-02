@@ -16,7 +16,7 @@ public class UtilsTest extends BaseTest<Utils> {
         double fatPercentage = 15D;
 
         double fatWeight = Utils.calculateFatWeight(bodyWeight, fatPercentage);
-        Assert.assertEquals(11.25D, fatWeight, 0.01);
+        Assert.assertEquals(11.25D, fatWeight, DELTA);
     }
 
     @Test
@@ -25,7 +25,7 @@ public class UtilsTest extends BaseTest<Utils> {
         double fatWeight = 11.25D;
 
         double leanBodyMass = Utils.calculateLeanBodyMass(bodyWeight, fatWeight);
-        Assert.assertEquals(63.75D, leanBodyMass, 0.01);
+        Assert.assertEquals(63.75D, leanBodyMass, DELTA);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class UtilsTest extends BaseTest<Utils> {
         double residualWeight = 18.08D;
 
         double leanBodyMass = Utils.calculateMuscleWeight(bodyWeight, fatWeight, boneWeight, residualWeight);
-        Assert.assertEquals(35.55D, leanBodyMass, 0.01);
+        Assert.assertEquals(35.55D, leanBodyMass, DELTA);
     }
 
 }
