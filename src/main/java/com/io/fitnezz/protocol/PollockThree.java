@@ -6,16 +6,32 @@ public class PollockThree extends BaseProtocol {
     }
 
     /**
-     * Method to calculate sum of Pollock Three Skin Folds
+     * Method to calculate Female sum of Pollock Three Skin Folds
      *
-     * @param abdominal    - Abdominal
-     * @param thighPollock - Thigh
-     * @param chest        - Chest
-     * @return Sum of Pollock Three Skin Folds
+     * @param triceps    - Triceps
+     * @param thigh      - Thigh
+     * @param suprailiac - Suprailiac
+     * @return Female Sum of Pollock Three Skin Folds
      */
-    public static Double sum(double abdominal, double thighPollock, double chest) {
-        if (abdominal > 0 && thighPollock > 0 && chest > 0) {
-            return abdominal + thighPollock + chest;
+    public static Double sumFemale(double triceps, double thigh, double suprailiac) {
+        if (triceps > 0 && suprailiac > 0 && thigh > 0) {
+            return triceps + suprailiac + thigh;
+        }
+
+        return null;
+    }
+
+    /**
+     * Method to calculate Male sum of Pollock Three Skin Folds
+     *
+     * @param abdominal - Abdominal
+     * @param thigh     - Thigh
+     * @param chest     - Chest
+     * @return Male Sum of Pollock Three Skin Folds
+     */
+    public static Double sumMale(double abdominal, double thigh, double chest) {
+        if (abdominal > 0 && thigh > 0 && chest > 0) {
+            return abdominal + thigh + chest;
         }
 
         return null;

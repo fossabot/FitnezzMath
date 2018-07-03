@@ -13,9 +13,6 @@ public abstract class BaseTest<T> {
 
     protected Class<T> clazz;
 
-    public BaseTest() {
-    }
-
     @Test
     public void testConstructorIsPrivate() throws Exception {
         Constructor<T> constructor = clazz.getDeclaredConstructor();
