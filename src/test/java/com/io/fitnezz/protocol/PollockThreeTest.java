@@ -125,4 +125,31 @@ public class PollockThreeTest {
         Assert.assertEquals(15.001279458065842D, fatPercentage, DELTA);
     }
 
+    @Test
+    public void fatPercentageZeroAge() {
+        int age = 0;
+        double sum = 54D;
+
+        Double fatPercentage = PollockThree.fatPercentage(age, sum, true);
+        Assert.assertNull(fatPercentage);
+    }
+
+    @Test
+    public void fatPercentageZeroSum() {
+        int age = 19;
+        double sum = 0D;
+
+        Double fatPercentage = PollockThree.fatPercentage(age, sum, true);
+        Assert.assertNull(fatPercentage);
+    }
+
+    @Test
+    public void fatPercentageZeroAll() {
+        int age = 0;
+        double sum = 0D;
+
+        Double fatPercentage = PollockThree.fatPercentage(age, sum, true);
+        Assert.assertNull(fatPercentage);
+    }
+
 }

@@ -6,7 +6,6 @@ import org.junit.Test;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Modifier;
 
-
 public abstract class BaseTest<T> {
 
     protected static final double DELTA = 0.00001;

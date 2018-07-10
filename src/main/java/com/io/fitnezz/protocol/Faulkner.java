@@ -5,7 +5,6 @@ public class Faulkner extends BaseProtocol {
     private Faulkner() {
     }
 
-
     /**
      * Method to calculate Fat Percentage
      *

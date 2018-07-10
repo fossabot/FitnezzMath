@@ -28,17 +28,6 @@ public class Penroe {
     }
 
     /**
-     * Method to calculate Fat Weight
-     *
-     * @param bodyWeight    - Body Weight
-     * @param fatPercentage - Fat Percentage
-     * @return Fat Weight
-     */
-    public static Double fatWeight(double bodyWeight, double fatPercentage) {
-        return BaseProtocol.fatWeight(bodyWeight, fatPercentage);
-    }
-
-    /**
      * Method to calculate Lean Body Mass
      *
      * @param bodyWeight - Body Weight
