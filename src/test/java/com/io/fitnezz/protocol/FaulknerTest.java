@@ -27,7 +27,7 @@ public class FaulknerTest extends BaseTest<Faulkner> {
         double fatPercentage = 21.083D;
 
         Double fatWeight = Faulkner.fatWeight(bodyWeight, fatPercentage);
-        Assert.assertEquals(15.812D, fatWeight, DELTA);
+        Assert.assertEquals(15.812249999999999D, fatWeight, DELTA);
     }
 
     @Test

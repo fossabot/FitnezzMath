@@ -9,7 +9,7 @@ import java.lang.reflect.Modifier;
 
 public abstract class BaseTest<T> {
 
-    protected static final double DELTA = 0.001;
+    protected static final double DELTA = 0.00001;
 
     protected Class<T> clazz;
 
