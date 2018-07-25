@@ -19,11 +19,24 @@ public class Penroe {
     public static Double fatPercentage(double bodyWeight, double height, double leanBodyMass,
                                        double hip, double abdomen, boolean isMaleSex) {
 
-        if (!isMaleSex && hip > 0 && height > 0 && abdomen > 0) {
-            return (0.55 * hip) - (0.24 * height) + (0.28 * abdomen) - 8.43;
-        } else if (isMaleSex && bodyWeight > 0 && hip > 0) {
+        return isMaleSex ?
+                calculateFatPercentageForMale(bodyWeight, leanBodyMass) :
+                calculateFatPercentageForFemale(height, hip, abdomen);
+    }
+
+    private static Double calculateFatPercentageForMale(double bodyWeight, double leanBodyMass) {
+        if (bodyWeight > 0 && leanBodyMass > 0) {
             return ((bodyWeight - leanBodyMass) / bodyWeight) * 100;
         }
+
+        return null;
+    }
+
+    private static Double calculateFatPercentageForFemale(double height, double hip, double abdomen) {
+        if (hip > 0 && height > 0 && abdomen > 0) {
+            return (0.55 * hip) - (0.24 * height) + (0.28 * abdomen) - 8.43;
+        }
+
         return null;
     }
 
@@ -38,9 +51,17 @@ public class Penroe {
      * @return Lean Body Mass
      */
     public static Double leanBodyMass(double bodyWeight, double abdomen, double fist, double fatWeight, boolean isMaleSex) {
-        if (!isMaleSex && bodyWeight > 0 && fatWeight > 0) {
-            return BaseProtocol.leanBodyMass(bodyWeight, fatWeight);
-        } else if (isMaleSex && abdomen > 0 && fist > 0 && bodyWeight > 0) {
+        return isMaleSex ?
+                calculateLbmForMale(bodyWeight, abdomen, fist) :
+                calculateLbmForFemale(bodyWeight, fatWeight);
+    }
+
+    private static Double calculateLbmForFemale(double bodyWeight, double fatWeight) {
+        return BaseProtocol.leanBodyMass(bodyWeight, fatWeight);
+    }
+
+    private static Double calculateLbmForMale(double bodyWeight, double abdomen, double fist) {
+        if (bodyWeight > 0 && abdomen > 0 && fist > 0) {
             return (41.955 + (1.038786 * bodyWeight)) - (0.82816 * (abdomen - fist));
         }
 
