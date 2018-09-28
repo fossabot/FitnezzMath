@@ -1,11 +1,14 @@
 package com.io.fitnezz.protocol;
 
+import com.io.fitnezz.BaseTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PollockThreeTest {
+public class PollockThreeTest extends BaseTest<PollockThree> {
 
-    private static final double DELTA = 0.00001;
+    public PollockThreeTest() {
+        this.clazz = PollockThree.class;
+    }
 
     @Test
     public void sumFemale() {
