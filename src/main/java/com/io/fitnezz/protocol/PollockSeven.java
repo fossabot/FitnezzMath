@@ -20,8 +20,9 @@ public class PollockSeven extends BaseProtocol {
     public static Double sum(double triceps, double subscapular, double axillary, double suprailiac,
                              double abdominal, double thighPollock, double chest) {
 
-        if (triceps > 0 && subscapular > 0 && axillary > 0 && suprailiac > 0 && abdominal > 0 && thighPollock > 0 && chest > 0)
+        if (triceps > 0 && subscapular > 0 && axillary > 0 && suprailiac > 0 && abdominal > 0 && thighPollock > 0 && chest > 0) {
             return triceps + chest + subscapular + axillary + suprailiac + abdominal + thighPollock;
+        }
         return null;
     }
 
