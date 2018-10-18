@@ -49,4 +49,14 @@ public class BoneWeightTest extends BaseTest<BoneWeight> {
         Assert.assertNull(boneWeight);
     }
 
+    @Test
+    public void calculateBoneWeightZeroAll() {
+        double height = 0D;
+        double biStyloid = 0D;
+        double bicondylarFemur = 0D;
+
+        Double boneWeight = BoneWeight.calculate(height, biStyloid, bicondylarFemur);
+        Assert.assertNull(boneWeight);
+    }
+
 }
