@@ -206,4 +206,39 @@ public class SomatotypeTest extends BaseTest<Somatotype> {
         Assert.assertNull(mesomorphy);
     }
 
+
+    //Ectomorphy
+
+    @Test
+    public void calculateEctomorphyFirstCondition() {
+        double ponderalIndex = 41.0D;
+
+        Double ectomorphy = Somatotype.ectomorphy(ponderalIndex);
+        Assert.assertEquals(1.4320000000000022D, ectomorphy, DELTA);
+    }
+
+    @Test
+    public void calculateEctomorphySecondCondition() {
+        double ponderalIndex = 39.0D;
+
+        Double ectomorphy = Somatotype.ectomorphy(ponderalIndex);
+        Assert.assertEquals(0.42700000000000315D, ectomorphy, DELTA);
+    }
+
+    @Test
+    public void calculateEctomorphyLastCondition() {
+        double ponderalIndex = 37.0D;
+
+        Double ectomorphy = Somatotype.ectomorphy(ponderalIndex);
+        Assert.assertEquals(0.1D, ectomorphy, DELTA);
+    }
+
+    @Test
+    public void calculateEctomorphyZero() {
+        double ponderalIndex = 0D;
+
+        Double ectomorphy = Somatotype.ectomorphy(ponderalIndex);
+        Assert.assertNull(ectomorphy);
+    }
+
 }
