@@ -12,6 +12,8 @@ public class ClassifyBMITest {
     @Before
     public void init(){
         classifyBMI = new ClassifyBMI();
+        Assert.assertEquals("", classifyBMI.colorHex);
+        Assert.assertEquals("", classifyBMI.classification);
     }
 
     @Test
@@ -19,8 +21,8 @@ public class ClassifyBMITest {
         double bmi = 15D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.RED_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.UNDERWEIGHT_III.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.RED_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.UNDERWEIGHT_III.toString(), classifyBMI.getClassification());
     }
 
     @Test
@@ -28,8 +30,8 @@ public class ClassifyBMITest {
         double bmi = 16.5D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.ORANGE_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.UNDERWEIGHT_II.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.ORANGE_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.UNDERWEIGHT_II.toString(), classifyBMI.getClassification());
     }
 
     @Test
@@ -37,8 +39,8 @@ public class ClassifyBMITest {
         double bmi = 17.5D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.YELLOW_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.UNDERWEIGHT_I.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.YELLOW_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.UNDERWEIGHT_I.toString(), classifyBMI.getClassification());
     }
 
     @Test
@@ -46,8 +48,8 @@ public class ClassifyBMITest {
         double bmi = 19D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.GREEN_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.NORMAL.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.GREEN_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.NORMAL.toString(), classifyBMI.getClassification());
     }
 
     @Test
@@ -55,8 +57,8 @@ public class ClassifyBMITest {
         double bmi = 27D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.YELLOW_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.OVERWEIGHT_I.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.YELLOW_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.OVERWEIGHT_I.toString(), classifyBMI.getClassification());
     }
 
     @Test
@@ -64,8 +66,8 @@ public class ClassifyBMITest {
         double bmi = 35D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.ORANGE_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.OVERWEIGHT_II.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.ORANGE_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.OVERWEIGHT_II.toString(), classifyBMI.getClassification());
     }
 
     @Test
@@ -73,8 +75,8 @@ public class ClassifyBMITest {
         double bmi = 41D;
 
         classifyBMI.classify(bmi);
-        Assert.assertEquals(Classify.RED_COLOR_HEX, classifyBMI.colorHex);
-        Assert.assertEquals(BMIClassification.OVERWEIGHT_III.toString(), classifyBMI.classification);
+        Assert.assertEquals(Classify.RED_COLOR_HEX, classifyBMI.getColorHex());
+        Assert.assertEquals(BMIClassification.OVERWEIGHT_III.toString(), classifyBMI.getClassification());
     }
 
 }
